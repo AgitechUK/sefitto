@@ -1,0 +1,14 @@
+{
+  "name": "Şefitto — Gurme Acı Sos",
+  "short_name": "Şefitto",
+  "description": "MasterChef Türkiye 2024 yarışmacısı Şef Kaan Özdemir'den el yapımı gurme acı soslar.",
+  "lang": "tr",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#FBF3E4",
+  "theme_color": "#D93A26",
+  "icons": [
+    { "src": "/assets/icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/assets/icons/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

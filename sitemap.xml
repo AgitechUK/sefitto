@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://www.sefitto.com/</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://www.sefitto.com/assets/img/sauces-all-three-dark.jpg</image:loc>
+      <image:title>Şefitto 3 Özel Acı Sos: Yeşil Bela, Ejderha Öpücüğü, Tropik Ateş</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.sefitto.com/assets/img/tropik-ates-tanitim.jpg</image:loc>
+      <image:title>Şefitto Tropik Ateş Acı Sos — Ananaslı Hot Sauce</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.sefitto.com/assets/img/yesil-bela-tanitim.jpg</image:loc>
+      <image:title>Şefitto Yeşil Bela Acı Sos — Jalapeño &amp; Misket Limonlu Hot Sauce</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.sefitto.com/assets/img/ejderha-opucugu-tanitim.jpg</image:loc>
+      <image:title>Şefitto Ejderha Öpücüğü Acı Sos — Kırmızı Şili Biberli Hot Sauce</image:title>
+    </image:image>
+  </url>
+</urlset>

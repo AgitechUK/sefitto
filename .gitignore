@@ -1,0 +1,4 @@
+.DS_Store
+.claude/
+# Original source images (30MB+ files) — site serves optimized copies from assets/img/
+images/
