@@ -4,12 +4,35 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Google tag (gtag.js) -->
+  <!-- Google tag (gtag.js) with Consent Mode v2 (KVKK/GDPR) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-EYJNQK4SRW"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
+
+    // KVKK: reklam ve analiz çerezleri kullanıcı onayına kadar kapalı
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'analytics_storage': 'denied',
+      'functionality_storage': 'granted',
+      'security_storage': 'granted',
+      'wait_for_update': 500
+    });
+
+    // Önceki onayı geri yükle (config'ten önce, çerez sızmasını önlemek için)
+    try {
+      if (localStorage.getItem('sefitto-consent') === 'granted') {
+        gtag('consent', 'update', {
+          'ad_storage': 'granted',
+          'ad_user_data': 'granted',
+          'ad_personalization': 'granted',
+          'analytics_storage': 'granted'
+        });
+      }
+    } catch (e) {}
 
     gtag('config', 'G-EYJNQK4SRW');
   </script>
@@ -52,7 +75,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
 
   <link rel="preload" as="image" href="/assets/img/sauces-all-three-dark.jpg">
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/style.css?v=2">
 
   <!-- Structured Data: Organization / Brand -->
   <script type="application/ld+json">
@@ -494,10 +517,27 @@
     </div>
     <div class="footer-bottom">
       <p>© 2026 Şefitto — Tüm hakları saklıdır. 🌶️ İstanbul'da sevgiyle üretilmiştir.</p>
-      <p class="builder-credit">Web sitesi: <a href="https://meditr.co" target="_blank" rel="noopener">meditr.co</a></p>
+      <p class="builder-credit">
+        <button type="button" class="cookie-settings-link" id="cookie-settings">Çerez Tercihleri</button>
+        · Web sitesi: <a href="https://meditr.co" target="_blank" rel="noopener">meditr.co</a>
+      </p>
     </div>
   </footer>
 
-  <script src="/js/main.js" defer></script>
+  <!-- KVKK / Çerez Onay Bandı -->
+  <div class="cookie-banner" id="cookie-banner" role="dialog" aria-live="polite" aria-label="Çerez tercihleri" hidden>
+    <div class="cookie-inner">
+      <div class="cookie-text">
+        <strong>🍪 Çerezleri kullanmamıza izin verir misin?</strong>
+        <p>Şefitto kişisel verilerini toplamaz. Yalnızca siteyi geliştirmek ve sana uygun reklamlar gösterebilmek için Google Analytics çerezlerini kullanmak istiyoruz. Onayın olmadan bu çerezler çalışmaz. Dilediğin zaman <em>Çerez Tercihleri</em>'nden değiştirebilirsin.</p>
+      </div>
+      <div class="cookie-actions">
+        <button type="button" class="btn btn-small btn-ghost-dark" id="cookie-reject">Reddet</button>
+        <button type="button" class="btn btn-small btn-yellow" id="cookie-accept">Kabul Et</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/main.js?v=2" defer></script>
 </body>
 </html>

@@ -59,4 +59,49 @@
     { threshold: 0.6 }
   );
   document.querySelectorAll(".heat").forEach((el) => heatObserver.observe(el));
+
+  // KVKK cookie consent banner + Google Consent Mode v2
+  const banner = document.getElementById("cookie-banner");
+  const gtagFn = window.gtag || function () {};
+  const CONSENT_KEY = "sefitto-consent";
+
+  function storeConsent(value) {
+    try { localStorage.setItem(CONSENT_KEY, value); } catch (e) {}
+  }
+  function getConsent() {
+    try { return localStorage.getItem(CONSENT_KEY); } catch (e) { return null; }
+  }
+  function showBanner() { if (banner) banner.hidden = false; }
+  function hideBanner() { if (banner) banner.hidden = true; }
+
+  function grant() {
+    gtagFn("consent", "update", {
+      ad_storage: "granted",
+      ad_user_data: "granted",
+      ad_personalization: "granted",
+      analytics_storage: "granted",
+    });
+    storeConsent("granted");
+    hideBanner();
+  }
+  function deny() {
+    gtagFn("consent", "update", {
+      ad_storage: "denied",
+      ad_user_data: "denied",
+      ad_personalization: "denied",
+      analytics_storage: "denied",
+    });
+    storeConsent("denied");
+    hideBanner();
+  }
+
+  const accept = document.getElementById("cookie-accept");
+  const reject = document.getElementById("cookie-reject");
+  const settings = document.getElementById("cookie-settings");
+  if (accept) accept.addEventListener("click", grant);
+  if (reject) reject.addEventListener("click", deny);
+  if (settings) settings.addEventListener("click", (e) => { e.preventDefault(); showBanner(); });
+
+  // Show banner only if no choice has been made yet
+  if (!getConsent()) showBanner();
 })();
