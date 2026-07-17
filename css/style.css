@@ -341,6 +341,43 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 400; line-height: 1.
 }
 .cookie-settings-link:hover { color: #fff; }
 
+/* ---------- Legal / document pages ---------- */
+.legal-hero {
+  background: linear-gradient(135deg, var(--red-dark), var(--red) 60%, var(--orange));
+  color: #fff; padding: clamp(3rem, 7vw, 5rem) 0 clamp(2.5rem, 5vw, 3.5rem);
+  border-bottom: 4px solid var(--ink);
+}
+.legal-hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); text-shadow: 3px 3px 0 rgba(0,0,0,.22); }
+.legal-hero p { margin-top: .6rem; font-weight: 700; opacity: .92; }
+.legal { padding: clamp(2.5rem, 5vw, 4rem) 0 clamp(3rem, 6vw, 5rem); }
+.legal h2 {
+  font-family: var(--font-display); font-size: clamp(1.25rem, 2.6vw, 1.7rem);
+  margin: 2.2rem 0 .7rem; color: var(--ink);
+}
+.legal h2:first-child { margin-top: 0; }
+.legal h3 { font-size: 1.1rem; font-weight: 900; margin: 1.3rem 0 .4rem; }
+.legal p, .legal li { font-size: 1.03rem; }
+.legal p { margin-bottom: 1rem; }
+.legal ul { margin: 0 0 1.2rem 1.2rem; display: grid; gap: .4rem; }
+.legal a { color: var(--red); font-weight: 700; word-break: break-word; }
+.legal .updated { font-style: italic; opacity: .7; font-size: .95rem; }
+.legal-table-wrap { overflow-x: auto; margin: 0 0 1.4rem; }
+.legal table { border-collapse: collapse; width: 100%; min-width: 460px; font-size: .95rem; }
+.legal th, .legal td { border: 2px solid var(--ink); padding: .55em .8em; text-align: left; }
+.legal th { background: var(--yellow); font-weight: 900; }
+.legal td code { background: var(--cream-dark); padding: .1em .4em; border-radius: 5px; font-size: .92em; }
+.legal .note {
+  background: #fff; border: 3px solid var(--ink); border-left-width: 8px;
+  border-radius: 14px; padding: 1rem 1.2rem; margin: 1.5rem 0; box-shadow: 4px 4px 0 var(--cream-dark);
+}
+.legal .note strong { color: var(--red-dark); }
+.back-home {
+  display: inline-flex; align-items: center; gap: .4rem; margin-bottom: 1.4rem;
+  font-weight: 800; text-decoration: none; color: var(--ink);
+  border-bottom: 3px solid var(--yellow); padding-bottom: 2px;
+}
+.back-home:hover { color: var(--red); }
+
 /* ---------- Cookie banner (KVKK) ---------- */
 .cookie-banner {
   position: fixed; left: 50%; bottom: 1.2rem; transform: translateX(-50%);
